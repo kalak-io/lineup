@@ -1,0 +1,36 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-yaml
+      - id: destroyed-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: no-commit-to-branch
+        args: [--branch, master, --branch, main]
+      - id: pretty-format-json
+        args: [--autofix, --no-ensure-ascii, --no-sort-keys, --indent, "2"]
+        exclude: (package|config).json
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        language: system
+        files: ^/
+        entry: bash -c 'npm run format'
+        exclude: "node_modules"
+      - id: eslint
+        name: eslint
+        language: node
+        files: ^/
+        entry: bash -c 'npm run lint'
