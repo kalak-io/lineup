@@ -7,6 +7,7 @@ Lineup is a just a Web Components library to list data ith a combination of filt
 ## Getting Started
 
 Run:
+
 ```bash
 npm install
 npm start
@@ -24,11 +25,9 @@ To run the unit tests for the components, run:
 npm test
 ```
 
-
 ## Naming Components
 
-When creating new component tags, we recommend using `lp` in the component name (ex: `<lp-datepicker>`). 
-
+When creating new component tags, we recommend using `lp` in the component name (ex: `<lp-datepicker>`).
 
 ## Using this component
 
@@ -42,11 +41,19 @@ The first step for all three of these strategies is to [publish to NPM](https://
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
+
 - Run `npm install my-component --save`
 - Put a script tag similar to this `<script type='module' src='node_modules/my-component/dist/my-component.esm.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### In a stencil-starter app
+
 - Run `npm install my-component --save`
 - Add an import to the npm packages `import my-component;`
 - Then you can use the element anywhere in your template, JSX, html etc
+
+## Roadmap
+
+- [ ] Write the TypeScript interfaces
+- [ ] Create a dropdown to list available options of filter
+- [ ] Save combination to retrieve it after quit browser or page
