@@ -28,17 +28,17 @@
     "format": "npx prettier . --write"
   },
   "dependencies": {
-    "@stencil/core": "^4.7.0"
+    "@stencil/core": "^4.12.5"
   },
   "devDependencies": {
-    "@stencil-community/eslint-plugin": "^0.7.1",
+    "@stencil-community/eslint-plugin": "^0.7.2",
     "@types/jest": "^29.5.6",
-    "@types/node": "^16.18.11",
+    "@types/node": "^16.18.87",
     "eslint-config-prettier": "^9.1.0",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
     "prettier": "3.2.5",
-    "puppeteer": "^21.9.0"
+    "puppeteer": "^21.11.0"
   },
   "license": "MIT"
 }
