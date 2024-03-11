@@ -7,20 +7,12 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LpButton {
+        "callback"?: Function;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface LpDropdown {
+    }
+    interface LpDropdownMenu {
+        "options": object[];
     }
 }
 declare global {
@@ -30,37 +22,37 @@ declare global {
         prototype: HTMLLpButtonElement;
         new (): HTMLLpButtonElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLLpDropdownElement extends Components.LpDropdown, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLLpDropdownElement: {
+        prototype: HTMLLpDropdownElement;
+        new (): HTMLLpDropdownElement;
+    };
+    interface HTMLLpDropdownMenuElement extends Components.LpDropdownMenu, HTMLStencilElement {
+    }
+    var HTMLLpDropdownMenuElement: {
+        prototype: HTMLLpDropdownMenuElement;
+        new (): HTMLLpDropdownMenuElement;
     };
     interface HTMLElementTagNameMap {
         "lp-button": HTMLLpButtonElement;
-        "my-component": HTMLMyComponentElement;
+        "lp-dropdown": HTMLLpDropdownElement;
+        "lp-dropdown-menu": HTMLLpDropdownMenuElement;
     }
 }
 declare namespace LocalJSX {
     interface LpButton {
+        "callback"?: Function;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface LpDropdown {
+    }
+    interface LpDropdownMenu {
+        "options"?: object[];
     }
     interface IntrinsicElements {
         "lp-button": LpButton;
-        "my-component": MyComponent;
+        "lp-dropdown": LpDropdown;
+        "lp-dropdown-menu": LpDropdownMenu;
     }
 }
 export { LocalJSX as JSX };
@@ -68,7 +60,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lp-button": LocalJSX.LpButton & JSXBase.HTMLAttributes<HTMLLpButtonElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "lp-dropdown": LocalJSX.LpDropdown & JSXBase.HTMLAttributes<HTMLLpDropdownElement>;
+            "lp-dropdown-menu": LocalJSX.LpDropdownMenu & JSXBase.HTMLAttributes<HTMLLpDropdownMenuElement>;
         }
     }
 }
