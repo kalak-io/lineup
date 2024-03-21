@@ -14,8 +14,8 @@ const Template = (args) => `<lp-select options="${args.options}"></lp-select>`;
 export const Primary = Template.bind({});
 Primary.args = {
   options: [
-    { name: "Option 1" },
-    { name: "Option 2" },
-    { name: "Option 3" },
+    { name: "Option 1", label: "Option 1" },
+    { name: "Option 2", label: "Option 2" },
+    { name: "Option 3", label: "Option 3" },
   ]
 }

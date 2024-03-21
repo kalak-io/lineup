@@ -22,6 +22,11 @@
     <lp-button disabled>Click on</lp-button>
     <lp-dropdown>
     </lp-dropdown>
-    <lp-select />
+    <lp-select></lp-select>
   </body>
+  <footer>
+    <script>
+      document.querySelector('lp-select').options = [{ name: 'Option 1', label: 'Option 1' }, { name: 'Option 2', label: 'Option 2' }, { name: 'Option 3', label: 'Option 3' }];
+    </script>
+  </footer>
 </html>
