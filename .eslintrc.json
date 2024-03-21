@@ -4,6 +4,7 @@
   },
   "extends": [
     "plugin:@stencil-community/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ]
 }

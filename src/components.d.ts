@@ -5,22 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Options } from "./components/lp-select/lp-select";
+export { Options } from "./components/lp-select/lp-select";
 export namespace Components {
     interface LpButton {
+        "disabled": boolean;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface LpSelect {
+        "options": Options;
     }
 }
 declare global {
@@ -30,37 +22,27 @@ declare global {
         prototype: HTMLLpButtonElement;
         new (): HTMLLpButtonElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLLpSelectElement extends Components.LpSelect, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLLpSelectElement: {
+        prototype: HTMLLpSelectElement;
+        new (): HTMLLpSelectElement;
     };
     interface HTMLElementTagNameMap {
         "lp-button": HTMLLpButtonElement;
-        "my-component": HTMLMyComponentElement;
+        "lp-select": HTMLLpSelectElement;
     }
 }
 declare namespace LocalJSX {
     interface LpButton {
+        "disabled"?: boolean;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface LpSelect {
+        "options"?: Options;
     }
     interface IntrinsicElements {
         "lp-button": LpButton;
-        "my-component": MyComponent;
+        "lp-select": LpSelect;
     }
 }
 export { LocalJSX as JSX };
@@ -68,7 +50,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lp-button": LocalJSX.LpButton & JSXBase.HTMLAttributes<HTMLLpButtonElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "lp-select": LocalJSX.LpSelect & JSXBase.HTMLAttributes<HTMLLpSelectElement>;
         }
     }
 }
