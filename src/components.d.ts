@@ -9,7 +9,13 @@ import { Options } from "./components/lp-select/lp-select";
 export { Options } from "./components/lp-select/lp-select";
 export namespace Components {
     interface LpButton {
+        "callback"?: Function;
         "disabled": boolean;
+    }
+    interface LpDropdown {
+    }
+    interface LpDropdownMenu {
+        "options": object[];
     }
     interface LpSelect {
         "options": Options;
@@ -22,6 +28,18 @@ declare global {
         prototype: HTMLLpButtonElement;
         new (): HTMLLpButtonElement;
     };
+    interface HTMLLpDropdownElement extends Components.LpDropdown, HTMLStencilElement {
+    }
+    var HTMLLpDropdownElement: {
+        prototype: HTMLLpDropdownElement;
+        new (): HTMLLpDropdownElement;
+    };
+    interface HTMLLpDropdownMenuElement extends Components.LpDropdownMenu, HTMLStencilElement {
+    }
+    var HTMLLpDropdownMenuElement: {
+        prototype: HTMLLpDropdownMenuElement;
+        new (): HTMLLpDropdownMenuElement;
+    };
     interface HTMLLpSelectElement extends Components.LpSelect, HTMLStencilElement {
     }
     var HTMLLpSelectElement: {
@@ -30,18 +48,28 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "lp-button": HTMLLpButtonElement;
+        "lp-dropdown": HTMLLpDropdownElement;
+        "lp-dropdown-menu": HTMLLpDropdownMenuElement;
         "lp-select": HTMLLpSelectElement;
     }
 }
 declare namespace LocalJSX {
     interface LpButton {
+        "callback"?: Function;
         "disabled"?: boolean;
+    }
+    interface LpDropdown {
+    }
+    interface LpDropdownMenu {
+        "options"?: object[];
     }
     interface LpSelect {
         "options"?: Options;
     }
     interface IntrinsicElements {
         "lp-button": LpButton;
+        "lp-dropdown": LpDropdown;
+        "lp-dropdown-menu": LpDropdownMenu;
         "lp-select": LpSelect;
     }
 }
@@ -50,6 +78,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lp-button": LocalJSX.LpButton & JSXBase.HTMLAttributes<HTMLLpButtonElement>;
+            "lp-dropdown": LocalJSX.LpDropdown & JSXBase.HTMLAttributes<HTMLLpDropdownElement>;
+            "lp-dropdown-menu": LocalJSX.LpDropdownMenu & JSXBase.HTMLAttributes<HTMLLpDropdownMenuElement>;
             "lp-select": LocalJSX.LpSelect & JSXBase.HTMLAttributes<HTMLLpSelectElement>;
         }
     }
